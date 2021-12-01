@@ -3,7 +3,7 @@ import { Character } from './components/Character/index';
 import { useCharacter } from './hooks/useCharacter';
 import { useEffect } from 'react';
 const App = () => {
-  const char = useCharacter()
+  const char = useCharacter('josy')
 
   useEffect(()=>{
     window.addEventListener('keydown',handleKeydown)
@@ -36,7 +36,7 @@ const App = () => {
   return (
     <C.Container>
       <C.Map>
-        <Character x={char.x} y={char.y}/>
+        <Character x={char.x} y={char.y} side={char.side} name={char.name}/>
       </C.Map>
     </C.Container>
   );
